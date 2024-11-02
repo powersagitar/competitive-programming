@@ -1,0 +1,7 @@
+[
+  {
+    "label": "Run Makefile in current directory",
+    "command": "make",
+    "cwd": "$ZED_DIRNAME"
+  }
+]
