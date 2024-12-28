@@ -16,3 +16,4 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 add_subdirectory(canadian-computing-competition)
+add_subdirectory(dmoj)
