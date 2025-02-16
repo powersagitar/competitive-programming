@@ -5,7 +5,7 @@
       "type": "shell",
       "label": "cmake configure",
       "command": "cmake",
-      "args": ["-S.", "-Bbuild", "-GNinja"],
+      "args": ["-S.", "-Bbuild", "-GNinja", "-DCMAKE_CXX_COMPILER='clang++'"],
       "problemMatcher": [],
       "options": {
         "cwd": "${workspaceFolder}"
