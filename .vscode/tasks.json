@@ -1,28 +1,40 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "create build directory",
-            "type": "shell",
-            "command": "mkdir -p build",
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-        },
-        {
-            "label": "run active file",
-            "type": "shell",
-            "dependsOn": "create build directory",
-            "command": "clang++ -std=c++17 -O2 ${file} -o build/main; build/main",
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "cmake configure",
+      "command": "cmake",
+      "args": ["-S.", "-Bbuild", "-GNinja"],
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "build ccc 2025 source (current)",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "build",
+        "--target",
+        "ccc_2025_${fileBasenameNoExtension}"
+      ],
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "run ccc 2025 source (current)",
+      "dependsOn": "build ccc 2025 source (current)",
+      "command": "./build/canadian-computing-competition/2025/ccc_2025_${fileBasenameNoExtension}",
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    }
+  ]
 }
