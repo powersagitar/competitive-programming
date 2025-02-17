@@ -42,3 +42,13 @@ add_executable(
   othscc1p4
   othscc1p4/main.cc
 )
+
+add_executable(
+  uhscsoneone
+  uhscsoneone/main.cc
+)
+
+add_executable(
+  uhscsonethree
+  uhscsonethree/main.cc
+)
