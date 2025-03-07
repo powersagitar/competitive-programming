@@ -1,3 +1,7 @@
+include_directories(
+  ${CMAKE_SOURCE_DIR}/include
+)
+
 add_executable(ccc_2025_s1 s1.cc)
 
 add_executable(ccc_2025_s2 s2.cc)
